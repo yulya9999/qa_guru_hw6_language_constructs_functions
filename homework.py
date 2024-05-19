@@ -7,7 +7,7 @@ def test_dark_theme_by_time():
     """
     current_time = time(hour=23)
 
-    if time(hour=6) < current_time < time(hour=22):
+    if time(hour=6) <= current_time < time(hour=22):
         is_dark_theme = False
     else:
         is_dark_theme = True
@@ -34,7 +34,7 @@ def test_dark_theme_by_time_and_user_choice():
     elif dark_theme_enabled_by_user is False:
         is_dark_theme = False
     else:
-        if time(hour=6) < current_time < time(hour=22):
+        if time(hour=6) <= current_time < time(hour=22):
             is_dark_theme = False
         else:
             is_dark_theme = True
@@ -53,6 +53,7 @@ def test_find_suitable_user():
         {"name": "Olga", "age": 45},
         {"name": "Maria", "age": 18},
     ]
+    suitable_users = None
 
     # найдите пользователя с именем "Olga"
     for user in users:
